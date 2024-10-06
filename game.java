@@ -47,10 +47,12 @@ public class game {
 				boolean running = true;
 				int t1Wins = 0;
 				int t2Wins = 0;
+				stats.clearStats(t1);
+				stats.clearStats(t2);
 				while (t1Wins < 4 && t2Wins < 4) {
 					running = true;
 					int i = 0;
-					while (i < 160 || t1.stats.score() == t2.stats.score) {
+					while (i < 450 || t1.stats.score() == t2.stats.score) {
 						int shooter = randInt(1, 100);
 						int shot = randInt(1, 100);
 						if (shooter < 31) {
@@ -213,10 +215,12 @@ public class game {
 					boolean running = true;
 					int t1Wins = 0;
 					int t2Wins = 0;
+					stats.clearStats(t1);
+					stats.clearStats(t2);
 					while (t1Wins < 4 && t2Wins < 4) {
 						running = true;
 						int i = 0;
-						while (i < 160 || t1.stats.score() == t2.stats.score) {
+						while (i < 450 || t1.stats.score() == t2.stats.score) {
 							int shooter = randInt(1, 100);
 							int shot = randInt(1, 100);
 							if (shooter < 31) {
@@ -332,7 +336,7 @@ public class game {
 	public static void twoPoint(Player offense, Player defense, Team team, int shot) {
 		int chance = randInt(1, 100);
 		int defence_quality = randInt(1, 100);
-		if (shot > 20 && shot < 85 && chance < offense.twoPt() && defence_quality > defense.defense()) {
+		if (shot < 85 && chance < offense.twoPt() && defence_quality > defense.defense()) {
 			offense.stats.addScore(2);
 			team.stats.addScore(2);
 		}
