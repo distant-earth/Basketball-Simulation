@@ -330,8 +330,8 @@ public class game {
 
 	// odds of shooting and making a 2 point shot
 	public static void twoPoint(Player offense, Player defense, Team team, int shot) {
-		int chance = 0; //randInt(1, 100);
-		int defence_quality = 100; //randInt(1, 100);
+		int chance = randInt(1, 100);
+		int defence_quality = randInt(1, 100);
 		if (shot > 20 && shot < 85 && chance < offense.twoPt() && defence_quality > defense.defense()) {
 			offense.stats.addScore(2);
 			team.stats.addScore(2);
