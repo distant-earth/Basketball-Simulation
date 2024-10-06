@@ -50,59 +50,60 @@ public class game {
 				while (t1Wins < 4 && t2Wins < 4) {
 					running = true;
 					int i = 0;
-					while (i < 475) {
+					while (i < 160 || t1.stats.score() == t2.stats.score) {
 						int shooter = randInt(1, 100);
+						int shot = randInt(1, 100);
 						if (shooter < 31) {
 							if (i % 2 == 0) {// team 1 shooting
-								twoPoint(t1.p1, t2.p1, t1);
-								threePoint(t1.p1, t2.p1, t1);
+								twoPoint(t1.p1, t2.p1, t1, shot);
+								threePoint(t1.p1, t2.p1, t1, shot);
 							} else {// team 2 shooting
-								twoPoint(t2.p1, t1.p1, t2);
-								threePoint(t2.p1, t1.p1, t2);
+								twoPoint(t2.p1, t1.p1, t2, shot);
+								threePoint(t2.p1, t1.p1, t2, shot);
 							}
 
 							i++;
 						}
 						if (shooter > 30 && shooter < 51) {
 							if (i % 2 == 0) {// team 1 shooting
-								twoPoint(t1.p2, t2.p2, t1);
-								threePoint(t1.p2, t2.p2, t1);
+								twoPoint(t1.p2, t2.p2, t1, shot);
+								threePoint(t1.p2, t2.p2, t1, shot);
 							} else {// team 2 shooting
-								twoPoint(t2.p2, t1.p2, t2);
-								threePoint(t2.p2, t1.p2, t2);
+								twoPoint(t2.p2, t1.p2, t2, shot);
+								threePoint(t2.p2, t1.p2, t2, shot);
 							}
 
 							i++;
 						}
 						if (shooter > 50 && shooter < 69) {
 							if (i % 2 == 0) {// team 1 shooting
-								twoPoint(t1.p3, t2.p3, t1);
-								threePoint(t1.p3, t2.p3, t1);
+								twoPoint(t1.p3, t2.p3, t1, shot);
+								threePoint(t1.p3, t2.p3, t1, shot);
 							} else {// team 2 shooting
-								twoPoint(t2.p3, t1.p3, t2);
-								threePoint(t2.p3, t1.p3, t2);
+								twoPoint(t2.p3, t1.p3, t2, shot);
+								threePoint(t2.p3, t1.p3, t2, shot);
 							}
 
 							i++;
 						}
 						if (shooter > 68 && shooter < 86) {
 							if (i % 2 == 0) {// team 1 shooting
-								twoPoint(t1.p4, t2.p4, t1);
-								threePoint(t1.p4, t2.p4, t1);
+								twoPoint(t1.p4, t2.p4, t1, shot);
+								threePoint(t1.p4, t2.p4, t1, shot);
 							} else {// team 2 shooting
-								twoPoint(t2.p4, t1.p4, t2);
-								threePoint(t2.p4, t1.p4, t2);
+								twoPoint(t2.p4, t1.p4, t2, shot);
+								threePoint(t2.p4, t1.p4, t2, shot);
 							}
 
 							i++;
 						}
 						if (shooter > 85) {
 							if (i % 2 == 0) {// team 1 shooting
-								twoPoint(t1.p5, t2.p5, t1);
-								threePoint(t1.p5, t2.p5, t1);
+								twoPoint(t1.p5, t2.p5, t1, shot);
+								threePoint(t1.p5, t2.p5, t1, shot);
 							} else {// team 2 shooting
-								twoPoint(t2.p5, t1.p5, t2);
-								threePoint(t2.p5, t1.p5, t2);
+								twoPoint(t2.p5, t1.p5, t2, shot);
+								threePoint(t2.p5, t1.p5, t2, shot);
 							}
 
 							i++;
@@ -112,9 +113,9 @@ public class game {
 					System.out.println(t1.getName() + " " + t1.stats.score());
 					System.out.println(t2.getName() + " " + t2.stats.score() + "\n");
 
-					if (t1.stats.score() > t2.stats.score) {
+					if (t1.stats.score() > t2.stats.score()) {
 						t1Wins++;
-					} else {
+					} else if (t1.stats.score() < t2.stats.score()) {
 						t2Wins++;
 					}
 					System.out.println(t1.getName() + " wins: " + t1Wins);
@@ -215,59 +216,60 @@ public class game {
 					while (t1Wins < 4 && t2Wins < 4) {
 						running = true;
 						int i = 0;
-						while (i < 475) {
+						while (i < 160 || t1.stats.score() == t2.stats.score) {
 							int shooter = randInt(1, 100);
+							int shot = randInt(1, 100);
 							if (shooter < 31) {
 								if (i % 2 == 0) {// team 1 shooting
-									twoPoint(t1.p1, t2.p1, t1);
-									threePoint(t1.p1, t2.p1, t1);
+									twoPoint(t1.p1, t2.p1, t1, shot);
+									threePoint(t1.p1, t2.p1, t1, shot);
 								} else {// team 2 shooting
-									twoPoint(t2.p1, t1.p1, t2);
-									threePoint(t2.p1, t1.p1, t2);
+									twoPoint(t2.p1, t1.p1, t2, shot);
+									threePoint(t2.p1, t1.p1, t2, shot);
 								}
 
 								i++;
 							}
 							if (shooter > 30 && shooter < 51) {
 								if (i % 2 == 0) {// team 1 shooting
-									twoPoint(t1.p2, t2.p2, t1);
-									threePoint(t1.p2, t2.p2, t1);
+									twoPoint(t1.p2, t2.p2, t1, shot);
+									threePoint(t1.p2, t2.p2, t1, shot);
 								} else {// team 2 shooting
-									twoPoint(t2.p2, t1.p2, t2);
-									threePoint(t2.p2, t1.p2, t2);
+									twoPoint(t2.p2, t1.p2, t2, shot);
+									threePoint(t2.p2, t1.p2, t2, shot);
 								}
 
 								i++;
 							}
 							if (shooter > 50 && shooter < 69) {
 								if (i % 2 == 0) {// team 1 shooting
-									twoPoint(t1.p3, t2.p3, t1);
-									threePoint(t1.p3, t2.p3, t1);
+									twoPoint(t1.p3, t2.p3, t1, shot);
+									threePoint(t1.p3, t2.p3, t1, shot);
 								} else {// team 2 shooting
-									twoPoint(t2.p3, t1.p3, t2);
-									threePoint(t2.p3, t1.p3, t2);
+									twoPoint(t2.p3, t1.p3, t2, shot);
+									threePoint(t2.p3, t1.p3, t2, shot);
 								}
 
 								i++;
 							}
 							if (shooter > 68 && shooter < 86) {
 								if (i % 2 == 0) {// team 1 shooting
-									twoPoint(t1.p4, t2.p4, t1);
-									threePoint(t1.p4, t2.p4, t1);
+									twoPoint(t1.p4, t2.p4, t1, shot);
+									threePoint(t1.p4, t2.p4, t1, shot);
 								} else {// team 2 shooting
-									twoPoint(t2.p4, t1.p4, t2);
-									threePoint(t2.p4, t1.p4, t2);
+									twoPoint(t2.p4, t1.p4, t2, shot);
+									threePoint(t2.p4, t1.p4, t2, shot);
 								}
 
 								i++;
 							}
 							if (shooter > 85) {
 								if (i % 2 == 0) {// team 1 shooting
-									twoPoint(t1.p5, t2.p5, t1);
-									threePoint(t1.p5, t2.p5, t1);
+									twoPoint(t1.p5, t2.p5, t1, shot);
+									threePoint(t1.p5, t2.p5, t1, shot);
 								} else {// team 2 shooting
-									twoPoint(t2.p5, t1.p5, t2);
-									threePoint(t2.p5, t1.p5, t2);
+									twoPoint(t2.p5, t1.p5, t2, shot);
+									threePoint(t2.p5, t1.p5, t2, shot);
 								}
 
 								i++;
@@ -277,9 +279,9 @@ public class game {
 						System.out.println(t1.getName() + " " + t1.stats.score());
 						System.out.println(t2.getName() + " " + t2.stats.score() + "\n");
 
-						if (t1.stats.score() > t2.stats.score) {
+						if (t1.stats.score() > t2.stats.score()) {
 							t1Wins++;
-						} else {
+						} else if (t1.stats.score() < t2.stats.score()){
 							t2Wins++;
 						}
 						System.out.println(t1.getName() + " wins: " + t1Wins);
@@ -327,20 +329,20 @@ public class game {
 	}
 
 	// odds of shooting and making a 2 point shot
-	public static void twoPoint(Player offense, Player defense, Team team) {
-		int shot = randInt(1, 100);
-		int chance = randInt(1, 100);
-		if (shot < 85 && chance < offense.twoPt() && randInt(1, 100) > defense.defense) {
+	public static void twoPoint(Player offense, Player defense, Team team, int shot) {
+		int chance = 0; //randInt(1, 100);
+		int defence_quality = 100; //randInt(1, 100);
+		if (shot > 20 && shot < 85 && chance < offense.twoPt() && defence_quality > defense.defense()) {
 			offense.stats.addScore(2);
 			team.stats.addScore(2);
 		}
 	}
 
 	// odds of shooting and making a 3 point shot
-	public static void threePoint(Player offense, Player defense, Team team) {
-		int shot = randInt(1, 100);
+	public static void threePoint(Player offense, Player defense, Team team, int shot) {
 		int chance = randInt(1, 100);
-		if (shot > 85 && chance < offense.threePt() && randInt(1, 100) > defense.defense()) {
+		int defence_quality = randInt(1, 100);
+		if (shot >= 85 && chance < offense.threePt() && defence_quality > defense.defense()) {
 			offense.stats.addScore(3);
 			offense.stats.addThree(1);
 			team.stats.addScore(3);
@@ -350,7 +352,9 @@ public class game {
 	// creates a random number
 	public static int randInt(int min, int max) {
 		Random rand = new Random();
-
+		// note to self:
+		// zero argument constructor uses the nanoTime to try to get a different seed every time 
+		
 		// nextInt is normally exclusive of the top value,
 		// so add 1 to make it inclusive
 		int randomNum = rand.nextInt((max - min) + 1) + min;
