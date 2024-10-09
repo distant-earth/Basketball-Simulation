@@ -50,7 +50,7 @@ The code has 6 pre-existing teams, each one contains 5 pre-existing players in a
 -  his ability to score a 3-pointer;
 -  his defensive ability.
 
-One particular game simulation happens within a loop; even iterations correspond to the first team and odd iterations correspond to the second team. During each iteration, a random integer between 1 and 100 is generated to decide on a player who takes the shot (*"shooter"*). Player #1 has 30% chance of shooting, players #2 and #3 have 20%, players #4 and #5 --- 15%.
+One particular game simulation happens within a loop; even iterations correspond to the first team and odd iterations correspond to the second team. During each iteration, a random integer between 1 and 100 is generated to decide on a player who takes the shot (*"shooter"*). Player #1 has 30% chance of shooting, players #2 and #3 have 20%, players #4 and #5 — 15%.
 
 Another random integer between 1 and 100 is generated to decide whether the chosen player attempts to throw a 2- or 3-pointer (*"shot"*). Less than 85 corresponds to a 2-point attempt, the rest is a 3-point attempt.
 
